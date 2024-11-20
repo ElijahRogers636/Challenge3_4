@@ -25,6 +25,7 @@ namespace Challenge3_4
         // Removes the target substring from the given string
         static string RemoveTargetSubstring(string s, string substring1, string substring2)
         {
+            string origString = s;
             string testSubstring;
             bool cond = true;
             while (cond) 
@@ -44,7 +45,17 @@ namespace Challenge3_4
                     }
                 }
             }
-            return s;
+
+            if (s.Length != origString.Length)
+            {
+                return s;
+            }
+            else
+            {
+                return "No Matches found, length stays the same";
+            }
+
+            
         }
     }
 }
